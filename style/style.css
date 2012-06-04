@@ -1,0 +1,330 @@
+/* 
+    Document   : style
+    Created on : Aug 1, 2011, 3:55:07 PM
+    Author     : perlzadmin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-color:  #EDEDED;
+}
+a{
+color:#0972AB;
+border:none;
+}
+#main{
+    
+    border-right: 1px solid ;
+    width: 990px;
+    background-color: #FFFFFF;
+}
+#header{
+    width: 980px;
+    height: 97px;
+    border-left: 10px solid  #FFC354;
+}
+
+#content{
+    width: 660px;
+    min-height: 500px;
+    border-left: 10px solid  #007FBF;
+    float:left;
+    text-align:left;
+    padding:20px 0px 0px 20px;
+}
+
+#sidebar{
+	width:300px;
+	float:left;
+	min-height: 500px;
+	
+	}
+.clear{
+	clear:both;
+	}
+#footer{
+    width: 980px;
+    height: 60px;
+    border-left: 10px solid  #A1DE28;
+    border-top:1px solid #ccc;
+	
+}
+
+#logo{
+	text-align:left;
+	font:18px bold;
+	font-family:arial;
+	width:400px;
+	float:left;
+	margin-left:10px;
+}
+
+#login{
+	text-align:right;
+	padding:5px 30px 5px 0px;	
+	font:12px bold;
+	font-family:arial
+}
+
+#menu{
+padding:13px 0px 0px 0px;
+}
+
+#nav {
+    width: 100%;
+    float: left;
+    margin: 0 0 0px 0;
+    padding: 0px;
+    list-style: none;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    font:12px bold;
+    font-family:arial;
+	 }
+#nav li {
+    float: left; }
+#nav li a {
+    display: block;
+    padding: 10px 0 10px 0;
+    text-decoration: none;
+    font-weight: bold;
+    color: #545454;
+    width: 163px;
+    font-size:12px;
+}
+#nav li a:hover {
+    color: #FFCC00;
+    background-color: #545454;
+}
+
+#user{
+	text-align:right;
+	padding-right:10px;
+	padding-top:2px;
+}
+#search_results{
+width:620px;
+margin:5px;
+height:1000px;
+overflow:auto;
+}
+
+
+.tnail{
+float:left;
+}
+.slink{
+float:left;
+font-weight: bold;
+color: #545454;
+text-decoration:none;
+font:12px arial;
+padding:20px 0px 0px 5px;
+}
+
+.sr_e{
+padding:5px;
+border-bottom:1px solid #EDEDED;
+}
+
+.sr_e:hover{
+background-color:#EDEDED;
+}
+
+.from{
+width:620px;
+font: 12px arial;
+font-weight:bold;
+
+}
+
+.message{
+width:610px;
+font: 12px arial;
+padding:5px 5px 5px 5px;
+margin-bottom:10px;
+}
+
+.comments{
+width:550px;
+font: 12px arial;
+background-color:#EDEDED;
+padding:5px 5px 5px 20px;
+margin-bottom:5px;
+float:right;
+word-wrap:break-word;
+border:1px solid white;
+}
+
+.post{
+width:620px;
+padding:5px;
+
+}
+
+#info{
+padding:10px;
+margin-bottom:20px;
+}
+
+#profile_pic{
+float:left;
+width:150px;
+overflow:hidden;
+height:190px;
+}
+#details{
+float:left;
+width:300px;
+}
+.binfo{
+font:12px arial bold;
+}
+.heading{
+font:16px arial;
+font-weight:bold;
+
+}
+
+.learn{
+text-align:right;
+padding:5px;
+}
+
+.positive{
+margin:2px;
+text-decoration:none;
+color:green;
+font-weight:bold;
+}
+
+.positive:hover{
+cursor:pointer;
+text-decoration:underline;
+}
+.negative{
+margin:2px;
+text-decoration:none;
+color:red;
+font-weight:bold;
+}
+.negative:hover{
+cursor:pointer;
+text-decoration:underline;
+}
+.spam{
+margin:2px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+}
+.spam:hover{
+cursor:pointer;
+text-decoration:underline;
+}
+
+.pos{
+border:1px solid green;
+background-color:#D6E3B6;
+}
+.neg{
+border:1px solid #752308;
+background-color:#E3BFB6;
+}
+.neu{
+border:1px solid #C2A500;
+background-color:#FAF1BB;
+}
+
+#fnav{
+height:0px;
+}
+#power{
+margin:10px;
+text-align:left;
+font: 8px arial;
+}
+
+#keyword{
+border:1px solid #ccc;
+height:30px;
+margin:5px;
+width:300px;
+}
+
+#social{
+float:right;
+width:500px;
+height:20px;
+text-align:right;
+}
+
+#trend{
+height:300px;
+border:1px solid #ccc;
+}
+#trend-info{
+width:170px;
+float:left;
+padding:5px;
+text-align:center;
+}
+#trend-chart{
+width:300px;
+float:left;
+}
+#trend-cloud{
+width:165px;
+height:280px;
+float:left;
+padding:5px;
+text-align:center;
+overflow:auto
+}
+.link{
+font:12px Arial;
+font-weight:bold;
+color:#0972AB;
+}
+
+#tinfo{
+width:660px;
+}
+
+.slice{
+margin:20px 5px 20px 5px;
+border-right:1px solid #ccc;
+height:300px;
+overflow:auto;
+}
+
+.odd{
+background-color:#FFFFFF;
+}
+
+.even{
+background-color:#EDEDED;
+}
+
+.tinfo{
+font:12px arial;
+font-weight:bold;
+}
+.para{
+font:12px arial;
+}
+
+.para ul li{font:12px arial;}
+

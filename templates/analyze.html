@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+
+{% block head %}
+<script type="text/javascript"> 
+function learn(sentiment1, status1, pagename1, pageid1){
+$.post('/learn',{ message:status1,sentiment:sentiment1,pagename:pagename1,pageid:pageid1},function(data){
+alert("Thanks for teaching me Human!!");
+})
+}
+</script>
+
+
+{% endblock %}
+
+{% block content %}
+<div id="info">
+<div id="profile_pic">
+<img src="{{ picture }}"/>
+</div>
+<div id="details">
+	<p class="heading">{{ name }}</p>
+	<p class="binfo">Likes: {{ likes }}</p>
+	<p class="binfo">Id: {{ id }}</p>
+	<p class="binfo">Category: {{ category }}</p>
+</div>
+<div class="clear"></div>
+</div>
+{% for x in feed %} 
+<div class="post">
+
+	<div class="from">{{ x.from.name }}:</div>
+	<div class="message {{ x.sentiment }} {{x.count }}" name="{{ x.id }}" id="{{x.id}}">
+	{{ x.message }}
+	<input type="hidden" id="{{x.id}}" name="{{x.id}}" value="{{x.message}}"/>
+		<div class="learn">
+		Tag this post as :
+				<a class="positive" onclick="learn('pos', '{{ x.message }}', '{{name}}', '{{id}}')">Positive</a>
+				<a class="negative" onclick="learn('neg', '{{ x.message }}', '{{name}}', '{{id}}')" >Negative</a>
+				<a class="spam" onclick="learn('neu', '{{ x.message }}', '{{name}}', '{{id}}')" >Neutral</a>
+		</div>
+	{% for c in x.comments.data %}
+		<div class="comments {{c.sentiment}}" name="{{ c.id }}"> <b>{{ c.from.name }}</b>: {{ c.message }} <br/>
+			<div class="learn">
+			Tag this comment as :
+				<a class="positive" onclick="learn('pos', '{{ c.message }}', '{{name}}', '{{id}}')">Positive</a>
+				<a class="negative" onclick="learn('neg', '{{ c.message }}', '{{name}}', '{{id}}')" >Negative</a>
+				<a class="spam" onclick="learn('neu', '{{ c.message }}', '{{name}}', '{{id}}')" >Neutral</a>
+			</div>
+		</div>
+	{% endfor %}
+	<div class="clear"></div>
+</div>
+
+</div>				
+{% endfor %}
+{%endblock%}

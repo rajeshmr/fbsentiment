@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+
+{% block head%}
+<script type="javascript">
+$.ajax({
+  url: "/search-results",
+  context: document.body,
+  success: function(){
+    $(this).addClass("done");
+  }
+});
+</script>
+
+{% endblock %}
+
+{% block content %}
+	{% for result in results %}
+		<p>{{ result.name.content }}</p>
+	{% endfor %}
+{%endblock%}

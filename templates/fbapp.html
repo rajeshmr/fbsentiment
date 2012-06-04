@@ -1,0 +1,22 @@
+{% extends "app_main.html" %}
+
+
+
+{% block app_head %}
+<div id="app_head">
+	<div id="profile_pic">
+	{{ profile_pic }}
+	</div> 
+	<div id="user_stats"> 
+	{{ user_stats }}
+	</div>
+	<div class="clear"></div>
+</div>
+{% endblock %}
+
+{% block app_content %}
+<div id="content">
+{{ content }}
+</div>
+{% endblock %}
+

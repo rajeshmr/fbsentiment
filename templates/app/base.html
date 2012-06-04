@@ -1,0 +1,64 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <meta charset="utf-8">
+    <title>
+	Senti - Facebook Sentiment Analysis Tool
+    </title>
+    <meta name="description" content="Sentiment Analysis Tool for Facebook">
+    <link type="text/css" rel="stylesheet" href="/style/app.css">
+    <script src="https://www.google.com/jsapi?key=ABQIAAAAaCHlcWA-1yWSPrZLcbUTqhQCC1IYUAN_JrKoKe74TlWV6HWAGBQOUPzG-YtUniGK0ZEwNEbFtatjew" type="text/javascript"></script>
+    {% block head%}
+    
+    {% endblock %}
+  </head>
+  <body>
+    <div id="doc">
+      <div class="header">
+        <p><a class="logo" href="/fbapp/">	Senti - Facebook Sentiment Analysis Tool</a></p>
+      </div>
+      {% if message %}
+        <div class="message {{ message.type }}">{{ message.content|safe }}</div>
+      {% endif %}
+
+      <div class="content">
+        {% block body %}
+        
+        
+        {% endblock %}
+      </div><!-- .bd -->
+
+      <div class="footer">
+	<img src="/style/india.png" alt="Powered by India. My India, My Pride" />
+	<img src="http://code.google.com/appengine/images/appengine-noborder-120x30.gif" alt="Powered by Google App Engine" />
+	<img src="http://www.python.org/community/logos/python-powered-w-70x28.png" alt="Python Powered"/>
+	<img src="http://media.djangoproject.com/img/badges/djangoproject120x25.gif" border="0" alt="A Django project." title="A Django project." />
+
+      </div>
+    </div>
+
+    <script src="/style/main.js"></script>
+    <div id="fb-root"></div>
+    <script>
+      {# async loading of facebook js sdk #}
+      window.fbAsyncInit = function() { facebookInit({{ js_conf|safe }}) };
+      (function() {
+        var e = document.createElement('script');
+        e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+        document.getElementById('fb-root').appendChild(e);
+      }());
+
+      {# async loading of google analytics #}
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-19854556-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script');
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

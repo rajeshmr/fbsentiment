@@ -1,0 +1,80 @@
+{% extends 'main.html'%}
+{%block head%}
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+    
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+      
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+      
+      // Callback that creates and populates a data table, 
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+      // Create the data table.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Sentiment');
+      data.addColumn('number', 'per');
+      data.addRows([
+        ['Positive', {{pie.pos}}],
+        ['Neutral', {{pie.neu}}],
+        ['Negative', {{pie.neg}}], 
+      ]);
+
+      // Set chart options
+      var options = {'title':'Sentiment of FB Page-{{trend_title}}',
+                     'width':300,
+                     'height':290,
+		     'colors':['#C2F233',"#F2F22E","#F2662E"]};
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('trend-chart'));
+      chart.draw(data, options);
+    }
+    </script>
+{%endblock%}
+{% block content%}
+
+<div id="trend">
+<div id="trend-info">
+	<p class="heading">{{trend_title}}</p>
+	<p><a href="{{fb_link}}" target="_blank" class="link">FB Page</a> | <a href="/analyze?id={{fb_id}}" class="link">Show Analysis</a></p>
+	<div id="profile_pic">
+		<img src="{{trend_img}}" alt="{{trend_title}}"/>
+	</div>
+	
+</div>
+<div id="trend-chart">
+
+</div>
+<div id="trend-cloud">
+{{ cloud|safe }}
+</div>
+
+</div>
+<div class="clear"></div>
+<div id="tinfo">
+<p class="heading">Page Info</p>
+<div class="slice">
+
+	<table class="tinfo">
+	{% for items in tinfo.items %}
+	<tr class="{% cycle odd,even %}"><td>{{ items.0 }}</td><td>{{ items.1|safe }}</td></tr>
+	{% endfor %}
+	</table>
+</div>
+<p  class="heading">Recent Users</p>
+<div class="slice">
+
+	{% for x in users%}
+		<a href="http://www.facebook.com/profile.php?id={{x}}" target="_blank"><img src="https://graph.facebook.com/{{x}}/picture" alt="{{x}}" /></a>
+	{% endfor %}
+</div>
+</div>
+<div class="clear"></div>
+
+
+{% endblock%}

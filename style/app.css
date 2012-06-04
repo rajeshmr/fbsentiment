@@ -1,0 +1,74 @@
+body{
+font-family:arial;
+}
+a{
+border:none;
+}
+#container{
+border:1px solid #ccc;
+}
+#app_head{
+
+}
+#profile_pic{
+border:1px solid #ccc;
+width:180px;
+height:200px;
+overflow:hidden;
+float:left;
+}
+#user_stats{
+border:1px solid #ccc;
+width:180px;
+height:190px;
+overflow:auto;
+float:left;
+
+}
+.header{
+    width: 660px;
+    height: 50px;
+    border-left: 10px solid  #FFC354;
+    border-top:1px solid #ccc;
+    border-right:1px solid #ccc;
+        border-bottom:1px solid #ccc;
+}
+
+.content{
+    width: 640px;
+    min-height: 500px;
+    border-left: 10px solid  #007FBF;
+    text-align:left;
+    border-right:1px solid #ccc;
+    padding:20px 0px 0px 20px;
+}
+.footer{
+    width: 640px;
+    height: 35px;
+    border-left: 10px solid  #A1DE28;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    border-right:1px solid #ccc;
+    padding:10px;
+}
+
+.clear{
+clear:both;
+}
+
+.logo{
+margin-left:10px;
+font:16px arial;
+font-weight:bold;
+text-decoration:none;
+color:black;
+}
+
+.splash{
+float:left;
+}
+.info{
+float:left;
+width:300px;
+font:16px arial;
+}
